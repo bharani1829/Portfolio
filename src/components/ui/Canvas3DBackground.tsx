@@ -38,7 +38,7 @@ export const Canvas3DBackground: React.FC = () => {
       renderFrame(Math.round(currentFrameRef.current));
     };
 
-    // ─── Cover-mode frame renderer ────────────────────────────────────────────
+    // ─── Cover-mode frame renderer with watermark crop ───────────────────────
     const renderFrame = (frameIdx: number) => {
       const clampedIndex = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.floor(frameIdx)));
       const img = frameImagesRef.current[clampedIndex];
@@ -55,8 +55,15 @@ export const Canvas3DBackground: React.FC = () => {
       } else {
         dw = ch * ir; dh = ch; dx = (cw - dw) / 2; dy = 0;
       }
+
+      // 4% source crop completely removes the bottom-right watermark from the video frame
+      const cropX = img.naturalWidth * 0.04;
+      const cropY = img.naturalHeight * 0.04;
+      const srcW = img.naturalWidth - cropX * 2;
+      const srcH = img.naturalHeight - cropY * 2;
+
       ctx.clearRect(0, 0, cw, ch);
-      ctx.drawImage(img, dx, dy, dw, dh);
+      ctx.drawImage(img, cropX, cropY, srcW, srcH, dx, dy, dw, dh);
     };
 
     // ─── Scroll → target frame ────────────────────────────────────────────────
@@ -67,19 +74,17 @@ export const Canvas3DBackground: React.FC = () => {
       targetFrameRef.current = fraction * (TOTAL_FRAMES - 1);
     };
 
-    // ─── RAF Lerp render loop ─────────────────────────────────────────────────
+    // ─── RAF Lerp render loop (Optimized for smooth 60fps) ───────────────────
     const renderLoop = () => {
       updateTarget();
       const diff = targetFrameRef.current - currentFrameRef.current;
-      if (Math.abs(diff) > 0.05) {
+      if (Math.abs(diff) > 0.04) {
         currentFrameRef.current += diff * LERP_FACTOR;
-      } else {
-        currentFrameRef.current = targetFrameRef.current;
-      }
-      const rounded = Math.round(currentFrameRef.current);
-      if (rounded !== lastRenderedFrameRef.current) {
-        renderFrame(rounded);
-        lastRenderedFrameRef.current = rounded;
+        const rounded = Math.round(currentFrameRef.current);
+        if (rounded !== lastRenderedFrameRef.current) {
+          renderFrame(rounded);
+          lastRenderedFrameRef.current = rounded;
+        }
       }
       animationFrameIdRef.current = requestAnimationFrame(renderLoop);
     };
@@ -121,8 +126,9 @@ export const Canvas3DBackground: React.FC = () => {
         className="absolute inset-0 pointer-events-none"
         style={{
           background: `
-            linear-gradient(to right, rgba(7,7,9,0.80) 0%, rgba(7,7,9,0.20) 50%, rgba(7,7,9,0.80) 100%),
-            linear-gradient(to bottom, rgba(7,7,9,0.55) 0%, transparent 18%, transparent 78%, rgba(7,7,9,0.95) 100%)
+            radial-gradient(circle at bottom right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.5) 22%, transparent 38%),
+            linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.85) 100%),
+            linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 16%, transparent 75%, rgba(0,0,0,0.98) 100%)
           `,
         }}
       />

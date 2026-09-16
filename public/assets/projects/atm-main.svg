@@ -1,0 +1,101 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="atmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E17"/>
+      <stop offset="50%" stop-color="#111625"/>
+      <stop offset="100%" stop-color="#080A10"/>
+    </linearGradient>
+    <linearGradient id="atmCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161C2C"/>
+      <stop offset="100%" stop-color="#0E121E"/>
+    </linearGradient>
+    <linearGradient id="atmGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#atmBg)"/>
+
+  <!-- Top Navigation Header -->
+  <rect x="0" y="0" width="1200" height="80" fill="#0E121E" stroke="#ffffff" stroke-opacity="0.08"/>
+  <circle cx="50" cy="40" r="16" fill="url(#atmGlow)"/>
+  <text x="76" y="47" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="18" letter-spacing="1">PYTHON ATM CORE v2.4</text>
+  <rect x="980" y="24" width="170" height="34" rx="17" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-opacity="0.4"/>
+  <circle cx="996" cy="41" r="5" fill="#10B981"/>
+  <text x="1010" y="46" fill="#10B981" font-family="monospace" font-size="12">SESSION SECURED</text>
+
+  <!-- Left Side: Terminal CLI & OOP State -->
+  <g transform="translate(60, 120)">
+    <rect x="0" y="0" width="500" height="620" rx="18" fill="#0A0C14" stroke="#ffffff" stroke-opacity="0.1"/>
+    <!-- Terminal Titlebar -->
+    <rect x="0" y="0" width="500" height="40" rx="18" fill="#141826"/>
+    <circle cx="25" cy="20" r="6" fill="#EF4444"/>
+    <circle cx="45" cy="20" r="6" fill="#F59E0B"/>
+    <circle cx="65" cy="20" r="6" fill="#10B981"/>
+    <text x="95" y="25" fill="#94A3B8" font-family="monospace" font-size="12">atm_engine.py — Python Console</text>
+
+    <!-- Code & Execution -->
+    <text x="30" y="80" fill="#8B5CF6" font-family="monospace" font-size="13">&gt;&gt;&gt; import banking_core as bank</text>
+    <text x="30" y="110" fill="#38BDF8" font-family="monospace" font-size="13">&gt;&gt;&gt; session = bank.ATMSystem(terminal_id="HYD-042")</text>
+    <text x="30" y="140" fill="#94A3B8" font-family="monospace" font-size="13">[SYSTEM] Initializing AES-256 PIN auth protocol...</text>
+    <text x="30" y="170" fill="#10B981" font-family="monospace" font-size="13">[SUCCESS] Terminal Ready. Cash Reserve: ₹2,40,000</text>
+    
+    <rect x="25" y="200" width="450" height="1" fill="#ffffff" fill-opacity="0.1"/>
+
+    <text x="30" y="240" fill="#F59E0B" font-family="monospace" font-size="13">=========================================</text>
+    <text x="30" y="265" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="14">   BHARANI SECURE ATM BANKING ENGINE     </text>
+    <text x="30" y="290" fill="#F59E0B" font-family="monospace" font-size="13">=========================================</text>
+
+    <text x="30" y="330" fill="#CBD5E1" font-family="monospace" font-size="13">1. Check Account Balance</text>
+    <text x="30" y="360" fill="#CBD5E1" font-family="monospace" font-size="13">2. Cash Withdrawal (Multi-denom dispense)</text>
+    <text x="30" y="390" fill="#CBD5E1" font-family="monospace" font-size="13">3. Instant Account Deposit</text>
+    <text x="30" y="420" fill="#CBD5E1" font-family="monospace" font-size="13">4. Mini-Statement &amp; Audit Trail</text>
+    <text x="30" y="450" fill="#CBD5E1" font-family="monospace" font-size="13">5. PIN Change &amp; Security Verification</text>
+
+    <rect x="25" y="490" width="450" height="40" rx="8" fill="#151B2E"/>
+    <text x="40" y="515" fill="#10B981" font-family="monospace" font-size="13">&gt; Enter Choice [1-5]: 2 (Withdrawal: ₹5,000)</text>
+
+    <text x="30" y="565" fill="#10B981" font-family="monospace" font-size="13">[TXN #88392] Verified. New Bal: ₹45,200.00</text>
+    <text x="30" y="595" fill="#38BDF8" font-family="monospace" font-size="13">[AUDIT] Transaction logged to secure database.</text>
+  </g>
+
+  <!-- Right Side: Interactive GUI Screen -->
+  <g transform="translate(600, 120)">
+    <rect x="0" y="0" width="540" height="620" rx="20" fill="url(#atmCard)" stroke="#8B5CF6" stroke-opacity="0.3"/>
+    
+    <!-- Balance Card Widget -->
+    <rect x="30" y="30" width="480" height="140" rx="16" fill="url(#atmGlow)" fill-opacity="0.15" stroke="#8B5CF6" stroke-opacity="0.5"/>
+    <text x="55" y="65" fill="#94A3B8" font-family="sans-serif" font-size="13">Active Savings Account</text>
+    <text x="55" y="105" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="34">₹ 45,200.00</text>
+    <text x="55" y="140" fill="#10B981" font-family="monospace" font-size="12">A/C: **** **** 9102 • Active &amp; Verified</text>
+
+    <!-- Quick Action Buttons -->
+    <g transform="translate(30, 200)">
+      <rect x="0" y="0" width="230" height="70" rx="12" fill="#1A2135" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="20" y="35" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="14">Fast Cash ₹500</text>
+      <text x="20" y="55" fill="#94A3B8" font-family="sans-serif" font-size="11">Instant Dispense</text>
+
+      <rect x="250" y="0" width="230" height="70" rx="12" fill="#1A2135" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="270" y="35" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="14">Fast Cash ₹1,000</text>
+      <text x="270" y="55" fill="#94A3B8" font-family="sans-serif" font-size="11">Instant Dispense</text>
+
+      <rect x="0" y="90" width="230" height="70" rx="12" fill="#1A2135" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="20" y="125" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="14">Fast Cash ₹2,000</text>
+      <text x="20" y="145" fill="#94A3B8" font-family="sans-serif" font-size="11">Instant Dispense</text>
+
+      <rect x="250" y="90" width="230" height="70" rx="12" fill="#1A2135" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="270" y="125" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="14">Fast Cash ₹5,000</text>
+      <text x="270" y="145" fill="#94A3B8" font-family="sans-serif" font-size="11">Instant Dispense</text>
+    </g>
+
+    <!-- Recent Logs -->
+    <rect x="30" y="390" width="480" height="190" rx="14" fill="#131826"/>
+    <text x="50" y="420" fill="#94A3B8" font-family="sans-serif" font-weight="bold" font-size="12">RECENT SYSTEM AUDIT</text>
+    <text x="50" y="450" fill="#FFFFFF" font-family="monospace" font-size="12">[14:30:12] Cash Dispensed: ₹5,000.00</text>
+    <text x="50" y="480" fill="#10B981" font-family="monospace" font-size="12">[14:28:44] PIN Verified: User Authorized</text>
+    <text x="50" y="510" fill="#38BDF8" font-family="monospace" font-size="12">[14:28:01] Card Inserted: Chip Read Success</text>
+    <text x="50" y="540" fill="#8B5CF6" font-family="monospace" font-size="12">[14:27:50] Encryption Key Exchange: OK</text>
+  </g>
+</svg>

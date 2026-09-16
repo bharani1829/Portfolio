@@ -1,0 +1,25 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="atmS1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121626"/>
+      <stop offset="100%" stop-color="#0A0C14"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="16" fill="url(#atmS1)" stroke="#8B5CF6" stroke-opacity="0.3"/>
+  <rect x="25" y="25" width="550" height="45" rx="10" fill="#1A2035"/>
+  <circle cx="45" cy="47" r="6" fill="#8B5CF6"/>
+  <text x="65" y="52" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="14">Python OOP Banking Class Architecture</text>
+  
+  <rect x="25" y="90" width="550" height="280" rx="12" fill="#0E121E" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="45" y="125" fill="#E879F9" font-family="monospace" font-size="13">class BankAccount:</text>
+  <text x="75" y="150" fill="#CBD5E1" font-family="monospace" font-size="12">def __init__(self, acc_number, holder_name, pin, balance=0.0):</text>
+  <text x="105" y="175" fill="#38BDF8" font-family="monospace" font-size="12">self.acc_number = acc_number</text>
+  <text x="105" y="200" fill="#38BDF8" font-family="monospace" font-size="12">self.__pin = self.hash_pin(pin)</text>
+  <text x="105" y="225" fill="#38BDF8" font-family="monospace" font-size="12">self.balance = balance</text>
+  <text x="105" y="250" fill="#38BDF8" font-family="monospace" font-size="12">self.transaction_history = []</text>
+  
+  <text x="75" y="285" fill="#10B981" font-family="monospace" font-size="12">def withdraw(self, amount, entered_pin):</text>
+  <text x="105" y="310" fill="#CBD5E1" font-family="monospace" font-size="12">if not self.verify_pin(entered_pin): raise AuthError()</text>
+  <text x="105" y="335" fill="#CBD5E1" font-family="monospace" font-size="12">if amount &gt; self.balance: raise InsufficientFunds()</text>
+  <text x="105" y="360" fill="#10B981" font-family="monospace" font-size="12">self.balance -= amount; return self.balance</text>
+</svg>

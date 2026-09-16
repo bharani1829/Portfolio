@@ -18,10 +18,10 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ label, href }) => 
     <a
       href={href}
       onClick={handleClick}
-      className="contact-btn-bg inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full text-white text-xs sm:text-sm font-medium uppercase tracking-widest hover:scale-105 transition-transform duration-500 whitespace-nowrap"
+      className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#F5F5F7] text-[#0A0A0A] hover:bg-white active:scale-[0.98] text-xs sm:text-sm font-medium uppercase tracking-widest transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.3)] whitespace-nowrap"
     >
       <span>{label}</span>
-      <ArrowUpRight className="w-4 h-4" />
+      <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
     </a>
   );
 };

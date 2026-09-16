@@ -4,11 +4,13 @@ import Lenis from 'lenis';
 export function useSmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.6,
+      duration: 1.15,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.85,
-      touchMultiplier: 1.8,
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1.6,
       infinite: false,
     });
 

@@ -1,46 +1,43 @@
 import React from 'react';
 import { FadeIn } from './ui/FadeIn';
-import { GraduationCap, Award, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, Award, BookOpen, Trophy, CheckCircle2 } from 'lucide-react';
 
 export const EducationSection: React.FC = () => {
   return (
     <section id="education" className="relative py-20 px-5 sm:px-8 md:px-10 bg-transparent">
       <div className="max-w-5xl mx-auto">
         <FadeIn delay={0} y={40} className="text-center mb-14 sm:mb-20">
-          <h2 className="hero-heading font-black uppercase text-[clamp(2.5rem,8vw,110px)] leading-none tracking-tight">
+          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-bold">
             EDUCATION
           </h2>
-          <p className="text-[#9CA3AF] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
-            Academic Foundation & Distinction
+          <p className="text-[#A1A1A6] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
+            Academic Foundation &amp; Distinction
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2} y={30}>
-          <div className="relative group rounded-[30px] sm:rounded-[40px] border-2 border-white/10 bg-neutral-950/80 p-6 sm:p-10 md:p-12 overflow-hidden shadow-2xl backdrop-blur-xl hover:border-[#7621B0]/50 transition-all duration-500">
-            {/* Background Glow */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#7621B0]/20 via-[#B600A8]/10 to-transparent rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
-
+          <div className="relative group rounded-[28px] sm:rounded-[36px] border border-white/10 bg-[#161618]/85 p-6 sm:p-10 md:p-12 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.4)] backdrop-blur-2xl hover:border-white/20 transition-all duration-300">
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Column: College Emblem & Title */}
               <div className="lg:col-span-7 flex flex-col gap-5">
-                <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#7621B0]/20 border border-[#7621B0]/40 text-[#C084FC] text-xs font-mono uppercase tracking-wider w-fit">
-                  <GraduationCap className="w-4 h-4 text-[#B600A8]" />
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 shadow-sm text-[#A1A1A6] text-xs font-mono uppercase tracking-wider w-fit backdrop-blur-md">
+                  <GraduationCap className="w-4 h-4 text-[#A1A1A6]" strokeWidth={1.75} />
                   <span>Aditya University • Autonomous</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white leading-tight">
-                  B.Tech in Artificial Intelligence & Machine Learning
+                <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#F5F5F7] leading-tight font-sans">
+                  B.Tech in Artificial Intelligence &amp; Machine Learning
                 </h3>
 
-                <div className="flex flex-wrap items-center gap-4 text-[#D7E2EA] font-mono text-sm">
-                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-                    <CheckCircle2 className="w-4 h-4" /> 2nd Year Pursuing
+                <div className="flex flex-wrap items-center gap-4 text-[#A1A1A6] font-mono text-sm">
+                  <span className="flex items-center gap-1.5 text-emerald-400/90 font-medium">
+                    <CheckCircle2 className="w-4 h-4" strokeWidth={1.75} /> 2nd Year Pursuing
                   </span>
-                  <span className="text-white/30">•</span>
-                  <span className="text-white/80">Aditya University Campus</span>
+                  <span className="text-white/20">•</span>
+                  <span className="text-white/70">Aditya University Campus</span>
                 </div>
 
-                <p className="text-[#9CA3AF] leading-relaxed text-sm sm:text-base">
+                <p className="text-[#A1A1A6] leading-relaxed text-sm sm:text-base font-normal">
                   Acquiring rigorous fundamentals in computer science, algorithm optimization, software engineering methodologies, database design, and next-generation AI architectures.
                 </p>
 
@@ -56,7 +53,7 @@ export const EducationSection: React.FC = () => {
                   ].map((sub) => (
                     <span
                       key={sub}
-                      className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-[#D7E2EA]"
+                      className="px-3.5 py-1.5 rounded-[12px] bg-white/[0.04] border border-white/8 text-xs font-normal text-[#A1A1A6] hover:text-white hover:border-white/15 transition-colors"
                     >
                       {sub}
                     </span>
@@ -65,22 +62,22 @@ export const EducationSection: React.FC = () => {
               </div>
 
               {/* Right Column: CGPA Card Highlight */}
-              <div className="lg:col-span-5 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#18011F] to-[#0C0C0C] border border-[#7621B0]/40 text-center relative overflow-hidden group/card shadow-xl">
-                <div className="absolute inset-0 bg-[#B600A8]/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
-
-                <Award className="w-12 h-12 text-[#B600A8] mb-3 animate-pulse-slow" />
-                <span className="text-xs uppercase font-mono tracking-widest text-[#9CA3AF] mb-1">
+              <div className="lg:col-span-5 flex flex-col items-center justify-center p-6 sm:p-8 rounded-[24px] bg-white/[0.03] border border-white/10 text-center relative overflow-hidden shadow-sm backdrop-blur-xl">
+                <div className="w-12 h-12 rounded-[14px] bg-white/[0.05] border border-white/10 flex items-center justify-center mb-3 shadow-sm">
+                  <Award className="w-6 h-6 text-[#F5F5F7]" strokeWidth={1.75} />
+                </div>
+                <span className="text-xs uppercase font-mono tracking-widest text-[#A1A1A6] mb-1">
                   Academic Performance
                 </span>
-                <div className="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#C084FC] to-[#60A5FA]">
+                <div className="text-5xl sm:text-6xl font-bold text-[#F5F5F7] tracking-tight font-sans">
                   9.10
                 </div>
-                <span className="text-xs font-mono text-emerald-400 font-semibold mt-1">
+                <span className="text-xs font-mono text-[#A1A1A6] font-medium mt-1">
                   CGPA • First Year Distinction
                 </span>
                 
-                <div className="mt-4 pt-4 border-t border-white/10 w-full flex items-center justify-center gap-2 text-xs text-[#D7E2EA]/70">
-                  <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
+                <div className="mt-4 pt-4 border-t border-white/10 w-full flex items-center justify-center gap-2 text-xs text-[#A1A1A6]">
+                  <Trophy className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
                   <span>Consistently Top Academic Performer</span>
                 </div>
               </div>

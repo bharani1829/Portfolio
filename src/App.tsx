@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { MinimalAnimalCursor } from './components/ui/MinimalAnimalCursor';
 import { Canvas3DBackground } from './components/ui/Canvas3DBackground';
 import { ScrollProgress } from './components/ui/ScrollProgress';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { HeroSection } from './components/HeroSection';
-import { MarqueeSection } from './components/MarqueeSection';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { ProjectsSection } from './components/ProjectsSection';
@@ -23,7 +23,10 @@ export const App: React.FC = () => {
   const handleCloseResumeModal = () => setIsResumeModalOpen(false);
 
   return (
-    <div className="relative bg-transparent text-[#D7E2EA] font-kanit overflow-x-clip min-h-screen">
+    <div className="relative bg-transparent text-[#F5F5F7] font-sans antialiased selection:bg-white/20 overflow-x-clip min-h-screen">
+      {/* Minimal Animal Cursor Follower */}
+      <MinimalAnimalCursor />
+
       {/* Scroll Journey Progress Indicator */}
       <ScrollProgress />
 
@@ -35,10 +38,7 @@ export const App: React.FC = () => {
         {/* 1. HERO SECTION */}
         <HeroSection onOpenResumeModal={handleOpenResumeModal} />
 
-        {/* 2. MARQUEE SECTION */}
-        <MarqueeSection />
-
-        {/* 3. ABOUT SECTION */}
+        {/* 2. ABOUT SECTION */}
         <AboutSection />
 
         {/* 4. SERVICES SECTION */}

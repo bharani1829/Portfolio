@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, FileDown, Sparkles } from 'lucide-react';
+import { Menu, X, FileDown, Github } from 'lucide-react';
 import { FadeIn } from './ui/FadeIn';
 
 interface NavbarProps {
@@ -35,24 +35,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
           {/* Logo / Brand Name */}
           <a
             href="#hero"
-            className="flex items-center gap-2 text-[#D7E2EA] font-extrabold uppercase tracking-widest text-lg md:text-xl lg:text-2xl group transition-all duration-500"
+            className="flex items-center gap-2.5 text-[#F5F5F7] font-bold uppercase tracking-wider text-base md:text-lg group transition-all duration-300"
           >
-            <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#7621B0] to-[#B600A8] flex items-center justify-center text-white text-sm group-hover:rotate-180 transition-transform duration-500 shadow-md shadow-[#7621B0]/50">
+            <span className="w-7 h-7 rounded-full bg-white/[0.08] border border-white/12 flex items-center justify-center text-[#F5F5F7] text-xs group-hover:scale-105 transition-transform duration-300 shadow-sm">
               ⚡
             </span>
-            <span className="group-hover:text-white transition-colors duration-500">
+            <span className="group-hover:text-white transition-colors duration-300 tracking-tight font-sans">
               BHARANI
             </span>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Nav Links — Apple VisionOS / macOS Frosted Capsule Dock */}
+          <nav className="hidden lg:flex items-center gap-7 px-7 py-2 rounded-full bg-[#161618]/80 border border-white/10 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm lg:text-[1.15rem] hover:opacity-70 transition-opacity duration-200"
+                className="text-[#A1A1A6] font-normal tracking-normal text-[13px] hover:text-[#F5F5F7] transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -60,12 +60,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden sm:flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-3">
+            <a
+              href="https://github.com/bharani1829"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/[0.06] border border-white/10 shadow-sm text-[#F5F5F7] text-xs uppercase font-medium tracking-wider hover:bg-white/[0.12] hover:border-white/20 active:scale-[0.98] transition-all duration-200"
+              title="GitHub Profile"
+            >
+              <Github className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
+              <span>GitHub</span>
+            </a>
             <button
               onClick={onOpenResumeModal}
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#D7E2EA]/40 text-[#D7E2EA] text-xs uppercase font-medium tracking-wider hover:bg-[#D7E2EA]/10 hover:border-white transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 shadow-sm text-[#F5F5F7] text-xs uppercase font-medium tracking-wider hover:bg-white/[0.12] hover:border-white/20 active:scale-[0.98] transition-all duration-200"
             >
-              <FileDown className="w-4 h-4 text-[#C084FC]" />
+              <FileDown className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
               <span>Resume</span>
             </button>
           </div>
@@ -73,35 +83,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-[#D7E2EA] p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none"
+            className="lg:hidden text-[#F5F5F7] p-2.5 rounded-[14px] bg-white/[0.06] border border-white/10 hover:bg-white/10 transition-colors focus:outline-none"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile Dropdown Drawer */}
+        {/* Mobile Dropdown Drawer — Apple VisionOS Squircle */}
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-[#0C0C0C]/95 backdrop-blur-xl border-b border-white/10 py-6 px-8 flex flex-col gap-5 shadow-2xl z-50">
+          <div className="lg:hidden mx-4 mt-3 rounded-[24px] bg-[#161618]/95 backdrop-blur-2xl border border-white/10 py-6 px-7 flex flex-col gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-[#D7E2EA] font-medium uppercase tracking-wider text-lg hover:text-white py-1 transition-colors duration-500"
+                className="text-[#A1A1A6] font-normal text-base hover:text-white py-1 transition-colors duration-200"
               >
                 {link.label}
               </a>
             ))}
-            <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-2.5">
+              <a
+                href="https://github.com/bharani1829"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/10 text-[#F5F5F7] hover:bg-white/[0.12] font-medium uppercase text-xs tracking-wider shadow-sm transition-all"
+              >
+                <Github className="w-4 h-4 text-[#A1A1A6]" strokeWidth={1.75} />
+                <span>GitHub Profile</span>
+              </a>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenResumeModal();
                 }}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[#7621B0] to-[#B600A8] text-white font-medium uppercase text-sm tracking-wider"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#F5F5F7] text-[#0A0A0A] hover:bg-white font-medium uppercase text-xs tracking-wider shadow-sm transition-all"
               >
-                <FileDown className="w-4 h-4" />
+                <FileDown className="w-4 h-4" strokeWidth={1.75} />
                 <span>Download Resume</span>
               </button>
             </div>

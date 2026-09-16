@@ -12,7 +12,7 @@ export const ScrollProgress: React.FC = () => {
   return (
     <motion.div
       style={{ scaleX: progress }}
-      className="fixed top-0 left-0 right-0 h-[3px] origin-left z-[60] bg-gradient-to-r from-[#7621B0] via-[#B600A8] to-[#3B82F6]"
+      className="fixed top-0 left-0 right-0 h-[2px] origin-left z-[60] bg-white/40 backdrop-blur-sm"
     />
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FadeIn } from './ui/FadeIn';
-import { Award, ShieldCheck, ExternalLink, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Award, ShieldCheck, ExternalLink, Cpu, CheckCircle2 } from 'lucide-react';
 import { Certification } from '../types/portfolio';
 
 const certificationsData: Certification[] = [
@@ -29,7 +29,7 @@ const certificationsData: Certification[] = [
     title: 'GenAI Powered Data Analytics',
     issuer: 'Tata Forage',
     badgeColor: 'from-[#7621B0] to-[#B600A8]',
-    iconName: 'Sparkles',
+    iconName: 'Cpu',
     description: 'Industry simulation executing generative AI analytical workflows, business reporting, and data interpretation.',
     skillsLearned: ['Generative AI', 'Data Analytics', 'Prompt Engineering', 'Insight Reports'],
     verifyUrl: 'https://www.theforage.com',
@@ -81,45 +81,38 @@ export const CertificationsSection: React.FC = () => {
     <section id="certifications" className="relative py-20 px-5 sm:px-8 md:px-10 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={40} className="text-center mb-14 sm:mb-20">
-          <h2 className="hero-heading font-black uppercase text-[clamp(2.5rem,8vw,110px)] leading-none tracking-tight">
+          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-bold">
             CERTIFICATIONS
           </h2>
-          <p className="text-[#9CA3AF] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
-            Verified Credentials & Global Specializations
+          <p className="text-[#A1A1A6] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
+            Verified Credentials &amp; Global Specializations
           </p>
         </FadeIn>
 
         {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {certificationsData.map((cert, idx) => (
-            <FadeIn key={cert.id} delay={idx * 0.08} y={30}>
-              <div className="rounded-[30px] border border-white/10 bg-neutral-950/80 p-6 sm:p-7 flex flex-col justify-between h-full hover:border-[#7621B0]/50 transition-all duration-500 group shadow-xl backdrop-blur-md relative overflow-hidden">
-                {/* Accent Corner Glow */}
-                <div
-                  className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${cert.badgeColor} opacity-10 blur-2xl group-hover:opacity-25 transition-opacity duration-500`}
-                ></div>
-
+            <FadeIn key={cert.id} delay={idx * 0.06} y={30}>
+              <div className="rounded-[24px] sm:rounded-[26px] border border-white/10 bg-[#161618]/70 p-6 sm:p-7 flex flex-col justify-between h-full backdrop-blur-xl shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:border-white/20 hover:bg-[#1C1C1E]/80 transition-all duration-300 group relative overflow-hidden">
                 <div>
                   {/* Top Badge & Issuer */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/90">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-white/[0.04] border border-white/8 text-[#A1A1A6]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400/90" strokeWidth={1.75} />
                       {cert.issuer}
                     </span>
-                    <div
-                      className={`w-8 h-8 rounded-full bg-gradient-to-tr ${cert.badgeColor} flex items-center justify-center text-white shadow-md`}
-                    >
-                      <Award className="w-4 h-4" />
+                    <div className="w-8 h-8 rounded-[10px] bg-white/[0.05] border border-white/10 flex items-center justify-center text-[#F5F5F7] shadow-sm">
+                      <Award className="w-4 h-4 text-[#F5F5F7]" strokeWidth={1.75} />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold uppercase tracking-tight text-white mb-2 group-hover:text-[#C084FC] transition-colors duration-500">
+                  <h3 className="text-base sm:text-lg font-semibold tracking-tight text-[#F5F5F7] mb-2 font-sans">
                     {cert.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[#9CA3AF] text-xs sm:text-sm leading-relaxed mb-4">
+                  <p className="text-[#A1A1A6] text-xs sm:text-sm leading-relaxed mb-4 font-normal">
                     {cert.description}
                   </p>
                 </div>
@@ -130,7 +123,7 @@ export const CertificationsSection: React.FC = () => {
                     {cert.skillsLearned.map((skill) => (
                       <span
                         key={skill}
-                        className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-white/5 text-[#D7E2EA]/80"
+                        className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-[8px] bg-white/[0.04] border border-white/8 text-[#A1A1A6]"
                       >
                         {skill}
                       </span>
@@ -142,10 +135,10 @@ export const CertificationsSection: React.FC = () => {
                       href={cert.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#C084FC] hover:text-white transition-colors duration-500"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-[#F5F5F7] hover:text-white hover:underline transition-colors duration-200"
                     >
                       <span>Verify Credential</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
                     </a>
                   )}
                 </div>

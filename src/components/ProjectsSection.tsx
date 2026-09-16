@@ -18,16 +18,30 @@ interface ProjectCardData {
 
 const projects: ProjectCardData[] = [
   {
-    id: 'skill-cycle',
+    id: 'ruralcare-360',
     number: '01',
-    category: 'College Workshop Project',
+    category: 'AI & Healthcare Platform (Vibe Coding)',
+    title: 'RuralCare 360 – Healthcare Coordination Platform',
+    description:
+      'RuralCare 360 is a role-based rural healthcare coordination platform that connects health workers, doctors, facilities, and administrators. It streamlines patient triage, referrals, teleconsultations, diagnostics, medicine tracking, and follow-ups to ensure every patient receives continuous care.',
+    tags: ['Vibe Coding', 'AI Tools', 'Rural Healthcare', 'Role-Based Triage', 'Teleconsultations', 'Medicine Tracking'],
+    images: [
+      '/assets/projects/ruralcare-sub1.svg',
+      '/assets/projects/ruralcare-sub2.svg',
+      '/assets/projects/ruralcare-main.svg',
+    ],
+    githubUrl: 'https://github.com/mudavath-leela-bharani',
+    liveUrl: '#',
+  },
+  {
+    id: 'skill-cycle',
+    number: '02',
+    category: 'College Workshop Innovation',
     title: 'Skill Cycle – Skill Exchange Platform',
     description:
       'Developed during an intensive college workshop. A collaborative web platform empowering users to exchange, teach, and learn skills directly from peers in an interactive community ecosystem.',
-    tags: ['HTML/CSS', 'Skill Exchange', 'Peer Learning', 'UX Design'],
-    // First image kept as original concept; photos 1-4 are user's real photos (excluding first)
+    tags: ['HTML/CSS', 'Skill Exchange', 'Peer Learning', 'UX Design', 'Workshop Innovation'],
     images: [
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85',
       '/skill-cycle/sc-photo1.jpg',
       '/skill-cycle/sc-photo2.jpg',
       '/skill-cycle/sc-photo3.jpg',
@@ -38,32 +52,16 @@ const projects: ProjectCardData[] = [
   },
   {
     id: 'atm-management',
-    number: '02',
+    number: '03',
     category: 'Python Desktop Application',
     title: 'ATM Management System',
     description:
       'A feature-rich banking application constructed with Python. Engine supporting secure account creation, instant deposits, cash withdrawals, balance inquiries, and detailed transaction history logs.',
-    tags: ['Python', 'Object-Oriented Programming', 'Banking Logic', 'CLI/GUI'],
+    tags: ['Python', 'Object-Oriented Programming', 'Banking Logic', 'Security Protocols', 'CLI/GUI'],
     images: [
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85',
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85',
-    ],
-    githubUrl: 'https://github.com/mudavath-leela-bharani',
-    liveUrl: '#',
-  },
-  {
-    id: 'genai-analytics',
-    number: '03',
-    category: 'Tata Forage Simulation',
-    title: 'GenAI Powered Data Analytics',
-    description:
-      'Generative AI data analytics simulation environment built for business intelligence, predictive trend synthesis, automated insight summaries, and statistical data visualization.',
-    tags: ['Generative AI', 'Data Analytics', 'Prompt Engineering', 'Python'],
-    images: [
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85',
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
+      '/assets/projects/atm-sub1.svg',
+      '/assets/projects/atm-sub2.svg',
+      '/assets/projects/atm-main.svg',
     ],
     githubUrl: 'https://github.com/mudavath-leela-bharani',
     liveUrl: '#',
@@ -81,10 +79,10 @@ export const ProjectsSection: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={40} className="text-center mb-16 sm:mb-20">
-          <h2 className="hero-heading font-black uppercase text-[clamp(3rem,12vw,160px)] leading-none tracking-tight">
+          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-bold">
             PROJECTS
           </h2>
-          <p className="text-[#9CA3AF] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
+          <p className="text-[#A1A1A6] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
             Handcrafted Software &amp; AI Applications
           </p>
         </FadeIn>
@@ -133,19 +131,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
     >
       <motion.div
         style={{ scale }}
-        className="rounded-[40px] sm:rounded-[50px] border-2 border-[#D7E2EA]/80 bg-[#0C0C0C]/90 backdrop-blur-xl p-5 sm:p-8 md:p-10 shadow-2xl overflow-hidden transition-shadow duration-500 hover:shadow-[0_24px_60px_rgba(118,33,176,0.3)]"
+        className="rounded-[28px] sm:rounded-[36px] border border-white/10 bg-[#161618]/90 backdrop-blur-2xl p-5 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.45)] overflow-hidden transition-all duration-300 hover:border-white/20"
       >
         {/* ── Header Row ── */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-[#D7E2EA]/15">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
           <div className="flex items-center gap-4 sm:gap-6">
-            <span className="font-black text-4xl sm:text-6xl text-[#D7E2EA] font-kanit opacity-60">
+            <span className="font-light text-3xl sm:text-5xl text-[#A1A1A6]/50 font-sans">
               {project.number}
             </span>
             <div>
-              <span className="text-xs uppercase font-mono tracking-widest text-[#9CA3AF] block mb-0.5">
+              <span className="text-[11px] uppercase font-mono tracking-widest text-[#A1A1A6] block mb-1">
                 {project.category}
               </span>
-              <h3 className="text-xl sm:text-3xl font-bold uppercase tracking-tight text-white font-kanit">
+              <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F5F7] font-sans">
                 {project.title}
               </h3>
             </div>
@@ -157,9 +155,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#D7E2EA]/70 hover:text-white hover:border-[#7621B0]/50 hover:bg-[#7621B0]/10 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 shadow-sm text-xs font-mono text-[#F5F5F7] hover:bg-white/[0.12] hover:border-white/20 active:scale-[0.98] transition-all duration-200"
               >
-                <Github className="w-3.5 h-3.5" />
+                <Github className="w-3.5 h-3.5 text-[#A1A1A6]" />
                 GitHub
               </a>
             )}
@@ -169,14 +167,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
 
         {/* ── Description & Tags ── */}
         <div className="mb-6 sm:mb-8">
-          <p className="text-[#D7E2EA]/75 text-sm sm:text-base leading-relaxed max-w-3xl mb-4">
+          <p className="text-[#A1A1A6] font-normal text-sm sm:text-base leading-relaxed max-w-3xl mb-4">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#C084FC] hover:bg-[#7621B0]/20 hover:border-[#7621B0]/40 transition-all duration-300 cursor-default"
+                className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/8 text-xs font-mono text-[#A1A1A6] hover:text-white hover:border-white/15 transition-all duration-200 cursor-default"
               >
                 #{tag}
               </span>
@@ -186,40 +184,62 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
 
         {/* ── Image Grid ── */}
         {isSkillCycle ? (
-          /* Skill Cycle: 5-image mosaic (1 wide + 4 in 2×2) */
+          /* Skill Cycle: 4 authentic workshop photos (1 large left + 3 right) */
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {/* First image — large left */}
-            <div className="md:col-span-5 h-[220px] sm:h-[300px] md:h-[380px] rounded-[28px] overflow-hidden border border-white/10 group/img relative">
+            {/* First real photo — large left */}
+            <div className="md:col-span-6 h-[240px] sm:h-[320px] md:h-[400px] rounded-[28px] overflow-hidden border border-white/10 group/img relative shadow-lg">
               <img
                 src={project.images[0]}
-                alt={`${project.title} – concept`}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-[1.06]"
+                alt={`${project.title} – Workshop Team`}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-[1.05]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-400" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-400 flex items-end p-4">
+                <span className="text-xs font-mono text-white/90">Workshop Innovation Team Photo</span>
+              </div>
             </div>
 
-            {/* 4 user photos — 2×2 right grid */}
-            <div className="md:col-span-7 grid grid-cols-2 gap-3">
-              {project.images.slice(1).map((src, i) => (
+            {/* 3 workshop event photos — right column */}
+            <div className="md:col-span-6 grid grid-cols-2 gap-3 h-full">
+              {/* Photo 2 - spans full row */}
+              <div
+                className="col-span-2 h-[150px] sm:h-[190px] rounded-[22px] overflow-hidden border border-white/10 group/img relative shadow-md cursor-pointer"
+                onMouseEnter={() => setHoveredImg(1)}
+                onMouseLeave={() => setHoveredImg(null)}
+              >
+                <motion.img
+                  src={project.images[1]}
+                  alt={`${project.title} – event photo 2`}
+                  className="w-full h-full object-cover"
+                  animate={{ scale: hoveredImg === 1 ? 1.05 : 1 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-mono text-white/90">
+                  Event Session
+                </div>
+              </div>
+
+              {/* Photos 3 & 4 */}
+              {project.images.slice(2).map((src, i) => (
                 <div
-                  key={i}
-                  className="h-[130px] sm:h-[175px] md:h-[183px] rounded-[22px] overflow-hidden border border-white/10 group/img relative cursor-pointer"
-                  onMouseEnter={() => setHoveredImg(i)}
+                  key={i + 2}
+                  className="h-[120px] sm:h-[150px] rounded-[20px] overflow-hidden border border-white/10 group/img relative shadow-md cursor-pointer"
+                  onMouseEnter={() => setHoveredImg(i + 2)}
                   onMouseLeave={() => setHoveredImg(null)}
                 >
                   <motion.img
                     src={src}
-                    alt={`${project.title} – event photo ${i + 1}`}
+                    alt={`${project.title} – event photo ${i + 3}`}
                     className="w-full h-full object-cover"
-                    animate={{ scale: hoveredImg === i ? 1.07 : 1 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    animate={{ scale: hoveredImg === i + 2 ? 1.04 : 1 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#7621B0]/30 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-400" />
-                  {/* Photo badge */}
-                  <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm text-[10px] font-mono text-white/80 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
-                    Photo {i + 1}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-mono text-white/90">
+                    Workshop {i + 3}
                   </div>
                 </div>
               ))}
@@ -232,24 +252,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
               {project.images.slice(0, 2).map((src, i) => (
                 <div
                   key={i}
-                  className={`rounded-[28px] overflow-hidden border border-white/10 group/img shadow-md ${
-                    i === 0 ? 'h-[140px] sm:h-[180px] md:h-[210px]' : 'h-[160px] sm:h-[220px] md:h-[260px]'
+                  className={`rounded-[26px] overflow-hidden border border-white/10 group/img shadow-md ${
+                    i === 0 ? 'h-[140px] sm:h-[180px] md:h-[210px]' : 'h-[160px] sm:h-[220px] md:h-[250px]'
                   }`}
                 >
                   <img
                     src={src}
                     alt={`${project.title} Preview ${i + 1}`}
-                    className="w-full h-full object-cover group-hover/img:scale-[1.06] transition-transform duration-500 ease-out"
+                    className="w-full h-full object-cover group-hover/img:scale-[1.04] transition-transform duration-500 ease-out"
                     loading="lazy"
                   />
                 </div>
               ))}
             </div>
-            <div className="md:col-span-7 h-[280px] sm:h-[410px] md:h-[486px] rounded-[28px] sm:rounded-[40px] overflow-hidden border border-white/10 group/img shadow-md">
+            <div className="md:col-span-7 h-[280px] sm:h-[410px] md:h-[475px] rounded-[28px] sm:rounded-[36px] overflow-hidden border border-white/10 group/img shadow-xl">
               <img
                 src={project.images[2]}
-                alt={`${project.title} Main`}
-                className="w-full h-full object-cover group-hover/img:scale-[1.05] transition-transform duration-500 ease-out"
+                alt={`${project.title} Main Preview`}
+                className="w-full h-full object-cover group-hover/img:scale-[1.03] transition-transform duration-500 ease-out"
                 loading="lazy"
               />
             </div>
