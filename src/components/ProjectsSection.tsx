@@ -30,7 +30,7 @@ const projects: ProjectCardData[] = [
       '/assets/projects/ruralcare-sub2.svg',
       '/assets/projects/ruralcare-main.svg',
     ],
-    githubUrl: 'https://github.com/mudavath-leela-bharani',
+    githubUrl: 'https://github.com/bharani1829/SIH-PROJECT.git',
     liveUrl: '#',
   },
   {
@@ -47,7 +47,7 @@ const projects: ProjectCardData[] = [
       '/skill-cycle/sc-photo3.jpg',
       '/skill-cycle/sc-photo4.jpg',
     ],
-    githubUrl: 'https://github.com/mudavath-leela-bharani',
+    githubUrl: 'https://github.com/bharani1829',
     liveUrl: '#',
   },
   {
@@ -63,7 +63,55 @@ const projects: ProjectCardData[] = [
       '/assets/projects/atm-sub2.svg',
       '/assets/projects/atm-main.svg',
     ],
-    githubUrl: 'https://github.com/mudavath-leela-bharani',
+    githubUrl: 'https://github.com/bharani1829/Bank_Account_Management_System.git',
+    liveUrl: '#',
+  },
+  {
+    id: 'student-attendance',
+    number: '04',
+    category: 'C++ Systems Application',
+    title: 'Student Attendance Management System',
+    description:
+      'A high-performance academic management application engineered in C++. Uses Object-Oriented Programming, binary file persistence, and binary search logic to record student logs, calculate attendance percentages, and automatically filter semester defaulters below 75%.',
+    tags: ['C++', 'Object-Oriented Programming', 'File I/O Streams', 'Data Structures', 'Academic Systems'],
+    images: [
+      '/assets/projects/attendance-sub1.svg',
+      '/assets/projects/attendance-sub2.svg',
+      '/assets/projects/attendance-main.svg',
+    ],
+    githubUrl: 'https://github.com/bharani1829/Student_Attendence_Management_System.git',
+    liveUrl: '#',
+  },
+  {
+    id: 'bank-management-mysql',
+    number: '05',
+    category: 'Database Management Systems (RDBMS)',
+    title: 'Bank Management System Using MySQL',
+    description:
+      'A relational enterprise banking engine constructed with MySQL and relational database theory. Supports ACID transactions, stored procedures, audit triggers, multi-table joins, and balance checks ensuring rock-solid consistency across customer deposits and withdrawals.',
+    tags: ['MySQL', 'RDBMS', 'SQL Transactions (ACID)', 'Stored Procedures', 'Triggers & Indexing'],
+    images: [
+      '/assets/projects/bankdb-sub1.svg',
+      '/assets/projects/bankdb-sub2.svg',
+      '/assets/projects/bankdb-main.svg',
+    ],
+    githubUrl: 'https://github.com/bharani1829/Bank_Account_Management_System.git',
+    liveUrl: '#',
+  },
+  {
+    id: 'loan-prediction-ml',
+    number: '06',
+    category: 'Data Science & Machine Learning',
+    title: 'Loan Prediction System Using NumPy, Pandas & Matplotlib',
+    description:
+      'An end-to-end data science and predictive analytics pipeline. Performs exploratory data analysis (EDA), missing value median imputations, log distributions via NumPy, and correlation heatmap visualization with Matplotlib to assess credit risk and forecast applicant loan approvals.',
+    tags: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'EDA & Feature Engineering', 'Predictive Modeling'],
+    images: [
+      '/assets/projects/loanml-sub1.svg',
+      '/assets/projects/loanml-sub2.svg',
+      '/assets/projects/loanml-main.svg',
+    ],
+    githubUrl: 'https://github.com/bharani1829/Loan-Prediction-Data-Analysis-System.git',
     liveUrl: '#',
   },
 ];

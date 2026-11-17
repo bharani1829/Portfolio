@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <rect width="600" height="400" fill="#0A0F17"/>
+  <rect x="20" y="20" width="560" height="360" rx="14" fill="#111824" stroke="#00758F" stroke-opacity="0.3"/>
+  <rect x="20" y="20" width="560" height="36" rx="14" fill="#172235"/>
+  <circle cx="45" cy="38" r="5" fill="#EF4444"/>
+  <circle cx="62" cy="38" r="5" fill="#F59E0B"/>
+  <circle cx="79" cy="38" r="5" fill="#10B981"/>
+  <text x="100" y="42" fill="#94A3B8" font-family="monospace" font-size="11">Stored Procedures &amp; Triggers</text>
+
+  <text x="45" y="90" fill="#F29111" font-family="monospace" font-size="12">DELIMITER // </text>
+  <text x="45" y="115" fill="#38BDF8" font-family="monospace" font-size="12">CREATE PROCEDURE TransferFunds(</text>
+  <text x="65" y="140" fill="#E2E8F0" font-family="monospace" font-size="11">  IN fromAcc INT, IN toAcc INT, IN amount DECIMAL</text>
+  <text x="45" y="165" fill="#38BDF8" font-family="monospace" font-size="12">) BEGIN ... COMMIT; END // </text>
+
+  <rect x="45" y="195" width="510" height="1" fill="#ffffff" fill-opacity="0.1"/>
+
+  <text x="45" y="235" fill="#10B981" font-family="monospace" font-size="12">&gt; Foreign Keys: ON DELETE RESTRICT</text>
+  <text x="45" y="265" fill="#38BDF8" font-family="monospace" font-size="12">&gt; Index Optimization: 0.001s lookup</text>
+  <text x="45" y="295" fill="#F59E0B" font-family="monospace" font-size="12">&gt; Audit Trigger: Automatic logging</text>
+  <text x="45" y="325" fill="#10B981" font-family="monospace" font-size="12">&gt; Relational Normalization: 3NF Compliant</text>
+</svg>

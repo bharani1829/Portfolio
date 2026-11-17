@@ -2,11 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Great Sailor Font Face Configuration ─────────────────────────────────── */
+@font-face {
+  font-family: 'Great Sailor';
+  src: local('Great Sailor'),
+       local('GreatSailor'),
+       url('/fonts/GreatSailor.woff2') format('woff2'),
+       url('/fonts/GreatSailor.woff') format('woff'),
+       url('/fonts/GreatSailor.otf') format('opentype'),
+       url('/fonts/GreatSailor.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   html, body, #root {
     background-color: #000000;
     color: #F5F5F7;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+    font-family: 'Great Sailor', 'Cinzel', 'Cinzel Decorative', Georgia, serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,11 +44,11 @@ html.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 html.lenis-stopped { overflow: hidden; }
 
-/* ── Heading Styles (Apple Minimal Monochrome & Metallic) ─────────────────── */
+/* ── Heading Styles ──────────────────────────────────────────────────────── */
 .hero-heading {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+  font-family: 'Great Sailor', 'Cinzel Decorative', 'Cinzel', serif;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   background: linear-gradient(180deg, #FFFFFF 0%, #D1D1D6 60%, #8E8E93 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -42,9 +56,9 @@ html.lenis-stopped { overflow: hidden; }
 }
 
 .hero-heading-vibrant {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+  font-family: 'Great Sailor', 'Cinzel Decorative', 'Cinzel', serif;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F7 45%, #A1A1A6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -52,13 +66,15 @@ html.lenis-stopped { overflow: hidden; }
 }
 
 .romantic-script {
+  font-family: 'Great Sailor', 'Cinzel Decorative', serif;
   font-style: italic;
   font-weight: 300;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   color: #A1A1A6;
 }
 
 .heading-gradient-light {
+  font-family: 'Great Sailor', 'Cinzel', serif;
   background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
