@@ -1,0 +1,5 @@
+[build]
+  # Install dependencies if they are missing (e.g. builds that skip the install step),
+  # then run the normal build.
+  command = "([ -e node_modules/.bin/tsc ] && [ -e node_modules/.bin/vite ] || npm ci --include=dev) && npm run build"
+  publish = "dist"
