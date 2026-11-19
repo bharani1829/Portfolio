@@ -130,11 +130,11 @@ export const MinimalAnimalCursor: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden select-none">
-      {/* Subtle trail dots */}
+      {/* Subtle trail dots in wine red */}
       {particles.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full bg-white/30 blur-[0.5px]"
+          className="absolute rounded-full bg-[#7F011F]/30 blur-[0.5px]"
           style={{
             left: `${p.x}px`,
             top: `${p.y}px`,
@@ -147,10 +147,10 @@ export const MinimalAnimalCursor: React.FC = () => {
         />
       ))}
 
-      {/* Minimal Origami Hummingbird Follower (Apple Monochrome Silver) */}
+      {/* Minimal Origami Hummingbird Follower (Wine Red & Sand) */}
       <div
         ref={birdRef}
-        className="absolute top-0 left-0 w-7 h-7 will-change-transform flex items-center justify-center filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
+        className="absolute top-0 left-0 w-7 h-7 will-change-transform flex items-center justify-center filter drop-shadow-[0_2px_8px_rgba(127,1,31,0.25)]"
       >
         <svg
           viewBox="0 0 32 32"
@@ -160,13 +160,13 @@ export const MinimalAnimalCursor: React.FC = () => {
         >
           <defs>
             <linearGradient id="birdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFFFFF" />
-              <stop offset="60%" stopColor="#D1D1D6" />
-              <stop offset="100%" stopColor="#8E8E93" />
+              <stop offset="0%" stopColor="#7F011F" />
+              <stop offset="60%" stopColor="#A30528" />
+              <stop offset="100%" stopColor="#630018" />
             </linearGradient>
             <linearGradient id="wingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#F5F5F7" stopOpacity="0.85" />
-              <stop offset="100%" stopColor="#AEAEB2" stopOpacity="0.75" />
+              <stop offset="0%" stopColor="#DF526D" stopOpacity="0.85" />
+              <stop offset="100%" stopColor="#7F011F" stopOpacity="0.75" />
             </linearGradient>
           </defs>
 
@@ -197,7 +197,7 @@ export const MinimalAnimalCursor: React.FC = () => {
           {/* Head accent */}
           <polygon
             points="28,16 23,14.5 23,17.5"
-            fill="#FFFFFF"
+            fill="#F5EBD0"
           />
 
           {/* Tail feather */}

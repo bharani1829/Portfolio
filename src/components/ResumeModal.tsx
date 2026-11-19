@@ -35,7 +35,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(22);
     doc.setTextColor(20, 20, 24);
-    doc.text('O LEELA BHARANI', 20, 24);
+    doc.text('ORSU LEELA BHARANI', 20, 24);
 
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(10);
@@ -70,7 +70,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     doc.text('Aditya University — B.Tech in Artificial Intelligence & Machine Learning', 20, y);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(90, 90, 95);
-    doc.text('2024 – 2028 (2nd Year)', 148, y);
+    doc.text('2025 – 2029 (2nd Year)', 148, y);
     y += 5;
     doc.setTextColor(60, 60, 65);
     doc.setFont('helvetica', 'normal');
@@ -103,7 +103,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     doc.text('Web Technologies:', 23, y);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(70, 70, 75);
-    doc.text('HTML5, CSS3, JavaScript, React UI, Tailwind CSS', 72, y);
+    doc.text('HTML5, CSS3, Responsive Design (Scrimba Certified)', 72, y);
     y += 5;
 
     doc.setFont('helvetica', 'bold');
@@ -138,7 +138,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     doc.text('Skill Cycle — Peer-to-Peer Skill Exchange Platform', 20, y);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(90, 90, 95);
-    doc.text('2024', 178, y);
+    doc.text('2026', 178, y);
     y += 4.5;
     doc.setTextColor(60, 60, 65);
     doc.setFontSize(9);
@@ -189,54 +189,54 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     );
     y += 4.5;
     doc.text(
-      'Python, modern full-stack architectures, and continuous problem solving.',
+      'Python, web design (HTML/CSS), and continuous problem solving.',
       23,
       y
     );
 
     // Trigger PDF download
-    doc.save('O_Leela_Bharani_Resume.pdf');
+    doc.save('Orsu_Leela_Bharani_Resume.pdf');
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md overflow-y-auto">
       <motion.div
         initial={{ opacity: 0, scale: 0.96, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 12 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-3xl bg-[#161618] border border-white/10 rounded-[28px] shadow-[0_24px_64px_rgba(0,0,0,0.8)] p-6 sm:p-8 my-8 overflow-hidden max-h-[90vh] flex flex-col"
+        className="relative w-full max-w-3xl bg-[#FAF6EC] border border-[#7F011F]/20 rounded-[28px] shadow-[0_24px_64px_rgba(127,1,31,0.2)] p-6 sm:p-8 my-8 overflow-hidden max-h-[90vh] flex flex-col text-[#7F011F]"
       >
         {/* Header bar */}
-        <div className="flex items-center justify-between pb-6 border-b border-white/10">
+        <div className="flex items-center justify-between pb-6 border-b border-[#7F011F]/15">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-[14px] bg-white/[0.06] border border-white/10 flex items-center justify-center text-[#F5F5F7]">
+            <div className="w-10 h-10 rounded-[14px] bg-[#7F011F]/10 border border-[#7F011F]/20 flex items-center justify-center text-[#7F011F]">
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold tracking-tight text-[#F5F5F7]">
-                O Leela Bharani — Resume
+              <h3 className="text-xl font-bold tracking-tight text-[#7F011F] font-serif">
+                Orsu Leela Bharani — Resume
               </h3>
-              <span className="text-xs font-mono text-[#A1A1A6]">
-                Aditya University • B.Tech AI & ML (9.10 CGPA)
+              <span className="text-xs font-mono text-[#7F011F]/70">
+                Aditya University • B.Tech AI &amp; ML (9.10 CGPA)
               </span>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-[#F5F5F7] transition-colors"
+            className="p-2 rounded-full bg-[#7F011F]/10 hover:bg-[#7F011F]/20 text-[#7F011F] transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Scrollable Document Content */}
-        <div className="flex-1 overflow-y-auto py-6 space-y-6 text-sm text-[#A1A1A6]">
+        <div className="flex-1 overflow-y-auto py-6 space-y-6 text-sm text-[#7F011F]/80">
           {/* Summary / Tagline */}
-          <div className="p-4 rounded-[18px] bg-white/[0.04] border border-white/10">
-            <p className="text-xs font-mono uppercase tracking-wider text-[#A1A1A6] mb-1">Professional Tagline</p>
-            <p className="font-medium text-[#F5F5F7]">
-              AI & ML Student | AI Enthusiast | Python Developer | Lifelong Learner
+          <div className="p-4 rounded-[18px] bg-[#F5EBD0] border border-[#7F011F]/15">
+            <p className="text-xs font-mono uppercase tracking-wider text-[#7F011F]/70 mb-1 font-semibold">Professional Tagline</p>
+            <p className="font-semibold text-[#7F011F]">
+              AI &amp; ML Student | AI Enthusiast | Python Developer | Lifelong Learner
             </p>
           </div>
 
@@ -246,87 +246,90 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               href="https://github.com/bharani1829"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs text-[#F5F5F7] hover:border-white/25 hover:bg-white/[0.08] transition-all"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5EBD0] border border-[#7F011F]/20 text-xs text-[#7F011F] hover:bg-[#7F011F] hover:text-[#F5EBD0] transition-all"
             >
-              <Github className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
+              <Github className="w-3.5 h-3.5" strokeWidth={1.75} />
               <span>github.com/bharani1829</span>
             </a>
             <a
               href="https://www.linkedin.com/in/orsu-leela-bharani-973649397"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs text-[#F5F5F7] hover:border-white/25 hover:bg-white/[0.08] transition-all"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5EBD0] border border-[#7F011F]/20 text-xs text-[#7F011F] hover:bg-[#7F011F] hover:text-[#F5EBD0] transition-all"
             >
-              <Linkedin className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
+              <Linkedin className="w-3.5 h-3.5" strokeWidth={1.75} />
               <span>LinkedIn Profile</span>
             </a>
           </div>
 
           {/* Education */}
           <div className="space-y-2">
-            <h4 className="text-xs uppercase font-mono tracking-widest text-[#A1A1A6] flex items-center gap-2">
-              <GraduationCap className="w-4 h-4 text-white/80" /> Education
+            <h4 className="text-xs uppercase font-mono tracking-widest text-[#7F011F] font-semibold flex items-center gap-2">
+              <GraduationCap className="w-4 h-4 text-[#7F011F]" /> Education
             </h4>
-            <div className="p-4 rounded-[18px] bg-white/[0.02] border border-white/10 space-y-1">
-              <div className="flex justify-between items-center font-medium text-[#F5F5F7]">
+            <div className="p-4 rounded-[18px] bg-[#F5EBD0] border border-[#7F011F]/15 space-y-1">
+              <div className="flex justify-between items-center font-bold text-[#7F011F] font-serif">
                 <span>B.Tech in AI &amp; ML</span>
-                <span className="text-xs font-mono text-white bg-white/[0.08] px-2.5 py-0.5 rounded-full border border-white/10">CGPA: 9.10</span>
+                <span className="text-xs font-mono text-[#F5EBD0] bg-[#7F011F] px-2.5 py-0.5 rounded-full">CGPA: 9.10</span>
               </div>
-              <p className="text-xs text-[#A1A1A6]">Aditya University • Currently in 2nd Year</p>
+              <p className="text-xs text-[#7F011F]/80">Aditya University • Currently in 2nd Year</p>
             </div>
           </div>
 
           {/* Technical Skills */}
           <div className="space-y-2">
-            <h4 className="text-xs uppercase font-mono tracking-widest text-[#A1A1A6] flex items-center gap-2">
-              <Award className="w-4 h-4 text-white/80" /> Technical Skills
+            <h4 className="text-xs uppercase font-mono tracking-widest text-[#7F011F] font-semibold flex items-center gap-2">
+              <Award className="w-4 h-4 text-[#7F011F]" /> Technical Skills
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              <div className="p-3.5 rounded-[16px] bg-white/[0.02] border border-white/8">
-                <span className="font-medium text-[#F5F5F7] block mb-1">Languages:</span>
-                <span className="text-[#A1A1A6]">Python, C Language, C++ (Learning)</span>
+              <div className="p-3.5 rounded-[16px] bg-[#F5EBD0] border border-[#7F011F]/15">
+                <span className="font-bold text-[#7F011F] block mb-1">Languages:</span>
+                <span className="text-[#7F011F]/80">Python, C Language, C++ (Learning)</span>
               </div>
-              <div className="p-3.5 rounded-[16px] bg-white/[0.02] border border-white/8">
-                <span className="font-medium text-[#F5F5F7] block mb-1">Core Subjects:</span>
-                <span className="text-[#A1A1A6]">Data Structures in C, DBMS, AI</span>
+              <div className="p-3.5 rounded-[16px] bg-[#F5EBD0] border border-[#7F011F]/15">
+                <span className="font-bold text-[#7F011F] block mb-1">Core Subjects:</span>
+                <span className="text-[#7F011F]/80">Data Structures in C, DBMS, AI</span>
               </div>
             </div>
           </div>
 
           {/* Projects */}
           <div className="space-y-2">
-            <h4 className="text-xs uppercase font-mono tracking-widest text-[#A1A1A6] flex items-center gap-2">
-              <Briefcase className="w-4 h-4 text-white/80" /> Highlight Projects
+            <h4 className="text-xs uppercase font-mono tracking-widest text-[#7F011F] font-semibold flex items-center gap-2">
+              <Briefcase className="w-4 h-4 text-[#7F011F]" /> Highlight Projects
             </h4>
             <ul className="space-y-2 text-xs">
-              <li className="p-3.5 rounded-[16px] bg-white/[0.02] border border-white/8">
-                <strong className="text-[#F5F5F7] font-medium">1. RuralCare 360:</strong> <span className="text-[#A1A1A6]">Role-based rural healthcare coordination platform connecting health workers, doctors, and facilities.</span>
+              <li className="p-3.5 rounded-[16px] bg-[#F5EBD0] border border-[#7F011F]/15">
+                <strong className="text-[#7F011F] font-bold">1. RuralCare 360:</strong> <span className="text-[#7F011F]/80">Role-based rural healthcare coordination platform.</span>
               </li>
-              <li className="p-3.5 rounded-[16px] bg-white/[0.02] border border-white/8">
-                <strong className="text-[#F5F5F7] font-medium">2. Skill Cycle:</strong> <span className="text-[#A1A1A6]">Skill exchange platform developed during college workshop.</span>
+              <li className="p-3.5 rounded-[16px] bg-[#F5EBD0] border border-[#7F011F]/15">
+                <strong className="text-[#7F011F] font-bold">2. Student Attendance System:</strong> <span className="text-[#7F011F]/80">C++ object-oriented system with binary file persistence.</span>
               </li>
-              <li className="p-3.5 rounded-[16px] bg-white/[0.02] border border-white/8">
-                <strong className="text-[#F5F5F7] font-medium">3. ATM Management System:</strong> <span className="text-[#A1A1A6]">Python financial banking application.</span>
+              <li className="p-3.5 rounded-[16px] bg-[#F5EBD0] border border-[#7F011F]/15">
+                <strong className="text-[#7F011F] font-bold">3. Bank Management System (MySQL):</strong> <span className="text-[#7F011F]/80">Enterprise transactional database engine.</span>
+              </li>
+              <li className="p-3.5 rounded-[16px] bg-[#F5EBD0] border border-[#7F011F]/15">
+                <strong className="text-[#7F011F] font-bold">4. Loan Prediction (NumPy/Pandas):</strong> <span className="text-[#7F011F]/80">Predictive data science pipeline.</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Action Bottom Bar */}
-        <div className="pt-4 border-t border-white/10 flex flex-wrap gap-4 items-center justify-between">
-          <span className="text-xs font-mono text-[#A1A1A6]">
+        <div className="pt-4 border-t border-[#7F011F]/15 flex flex-wrap gap-4 items-center justify-between">
+          <span className="text-xs font-mono text-[#7F011F]/70">
             Print-Ready Vector PDF Document
           </span>
           <div className="flex gap-3">
             <button
               onClick={onClose}
-              className="px-5 py-2.5 rounded-full border border-white/10 text-[#F5F5F7] text-xs uppercase font-medium hover:bg-white/[0.08] active:scale-[0.98] transition-all"
+              className="px-5 py-2.5 rounded-full border border-[#7F011F]/25 text-[#7F011F] text-xs uppercase font-semibold hover:bg-[#7F011F]/5 active:scale-[0.98] transition-all"
             >
               Close
             </button>
             <button
               onClick={handleDownload}
-              className="apple-pill-hover flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#F5F5F7] text-[#0A0A0A] text-xs uppercase font-semibold tracking-wider hover:bg-white active:scale-[0.98] transition-all shadow-md"
+              className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#7F011F] text-[#F5EBD0] text-xs uppercase font-semibold tracking-wider hover:bg-[#630018] active:scale-[0.98] transition-all shadow-md"
             >
               <Download className="w-4 h-4" />
               <span>Download PDF Resume</span>

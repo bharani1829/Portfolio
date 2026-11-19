@@ -18,9 +18,9 @@
 
 @layer base {
   html, body, #root {
-    background-color: #000000;
-    color: #F5F5F7;
-    font-family: 'Great Sailor', 'Cinzel', 'Cinzel Decorative', Georgia, serif;
+    background-color: #F5EBD0;
+    color: #7F011F;
+    font-family: 'Great Sailor', 'Cinzel', 'Cormorant Garamond', Georgia, serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -44,64 +44,58 @@ html.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 html.lenis-stopped { overflow: hidden; }
 
-/* ── Heading Styles ──────────────────────────────────────────────────────── */
+/* ── Heading Styles (Wine Red Editorial & Light Sand Aesthetic) ──────────── */
 .hero-heading {
-  font-family: 'Great Sailor', 'Cinzel Decorative', 'Cinzel', serif;
+  font-family: 'Great Sailor', 'Cinzel Decorative', 'Cinzel', 'Cormorant Garamond', serif;
   font-weight: 700;
   letter-spacing: -0.01em;
-  background: linear-gradient(180deg, #FFFFFF 0%, #D1D1D6 60%, #8E8E93 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #7F011F;
+  -webkit-text-fill-color: #7F011F;
 }
 
 .hero-heading-vibrant {
-  font-family: 'Great Sailor', 'Cinzel Decorative', 'Cinzel', serif;
+  font-family: 'Great Sailor', 'Cinzel Decorative', 'Cinzel', 'Cormorant Garamond', serif;
   font-weight: 700;
   letter-spacing: -0.01em;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F7 45%, #A1A1A6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #7F011F;
+  -webkit-text-fill-color: #7F011F;
 }
 
 .romantic-script {
-  font-family: 'Great Sailor', 'Cinzel Decorative', serif;
+  font-family: 'Great Sailor', 'Cinzel Decorative', 'Cormorant Garamond', serif;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.02em;
-  color: #A1A1A6;
+  color: #9A3E4E;
 }
 
 .heading-gradient-light {
   font-family: 'Great Sailor', 'Cinzel', serif;
-  background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #7F011F;
+  -webkit-text-fill-color: #7F011F;
 }
 
-/* ── Apple Primary High-Contrast Button ──────────────────────────────────── */
+/* ── Editorial Primary High-Contrast Button ──────────────────────────────── */
 .contact-btn-bg {
-  background: #F5F5F7;
-  color: #000000;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  background: #7F011F;
+  color: #F5EBD0;
+  box-shadow: 0 4px 14px rgba(127, 1, 31, 0.25);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .contact-btn-bg:hover {
-  background: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.12), 0 4px 14px rgba(0, 0, 0, 0.5);
+  background: #630018;
+  box-shadow: 0 6px 20px rgba(127, 1, 31, 0.35);
 }
 
-/* ── Custom smooth scrollbar (Apple Dark) ────────────────────────────────── */
+/* ── Custom smooth scrollbar (Light Sand / Wine Red) ─────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-track { background: #F5EBD0; }
 ::-webkit-scrollbar-thumb {
-  background: #242426;
+  background: #E2CA96;
   border-radius: 3px;
   transition: background 0.3s;
 }
-::-webkit-scrollbar-thumb:hover { background: #3A3A3C; }
+::-webkit-scrollbar-thumb:hover { background: #7F011F; }
 
 /* ── Float subtle animation ──────────────────────────────────────────────── */
 @keyframes float {
@@ -153,10 +147,10 @@ html.lenis-stopped { overflow: hidden; }
   transform: scale(1.03);
 }
 
-/* ── Glass card (Apple Minimal Translucent) ──────────────────────────────── */
+/* ── Glass card (Sand & Wine Translucent) ────────────────────────────────── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(245, 235, 208, 0.7);
+  border: 1px solid rgba(127, 1, 31, 0.12);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -164,13 +158,13 @@ html.lenis-stopped { overflow: hidden; }
 /* ── Refined border on hover ─────────────────────────────────────────────── */
 .hover-gradient-border {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(127, 1, 31, 0.15);
   background-clip: padding-box;
   transition: all 0.3s ease;
 }
 .hover-gradient-border:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(127, 1, 31, 0.45);
+  box-shadow: 0 8px 30px rgba(127, 1, 31, 0.08);
 }
 
 /* ── Magnetic button ripple ──────────────────────────────────────────────── */
@@ -183,7 +177,7 @@ html.lenis-stopped { overflow: hidden; }
   position: absolute;
   width: 10px;
   height: 10px;
-  background: rgba(255,255,255,0.3);
+  background: rgba(127, 1, 31, 0.25);
   border-radius: 50%;
   transform: scale(0);
   animation: ripple 0.6s linear;

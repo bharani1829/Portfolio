@@ -18,9 +18,9 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ label, href }) => 
     <a
       href={href}
       onClick={handleClick}
-      className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#F5F5F7] text-[#0A0A0A] hover:bg-white active:scale-[0.98] text-xs sm:text-sm font-medium uppercase tracking-widest transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.3)] whitespace-nowrap"
+      className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#7F011F] text-[#F5EBD0] hover:bg-[#630018] active:scale-[0.98] text-xs sm:text-sm font-semibold tracking-wider transition-all duration-200 shadow-md whitespace-nowrap"
     >
-      <span>{label}</span>
+      <span>{label} ↗</span>
       <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
     </a>
   );

@@ -23,7 +23,7 @@ export const App: React.FC = () => {
   const handleCloseResumeModal = () => setIsResumeModalOpen(false);
 
   return (
-    <div className="relative bg-transparent text-[#F5F5F7] font-sans antialiased selection:bg-white/20 overflow-x-clip min-h-screen">
+    <div className="relative bg-[#F5EBD0] text-[#7F011F] font-sans antialiased selection:bg-[#7F011F]/20 selection:text-[#7F011F] overflow-x-clip min-h-screen">
       {/* Minimal Animal Cursor Follower */}
       <MinimalAnimalCursor />
 

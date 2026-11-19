@@ -1,7 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FadeIn } from './ui/FadeIn';
-import { Award, ShieldCheck, ExternalLink, Cpu, CheckCircle2 } from 'lucide-react';
+import { Award, ShieldCheck, ExternalLink, Cpu, CheckCircle2, Trophy, Flame } from 'lucide-react';
 import { Certification } from '../types/portfolio';
+
+interface HackathonItem {
+  id: string;
+  title: string;
+  organizer: string;
+  role: string;
+  date: string;
+  description: string;
+  tags: string[];
+  certificateUrl?: string;
+}
+
+const hackathonsData: HackathonItem[] = [
+  {
+    id: 'sih-hackathon',
+    title: 'Smart India Hackathon (SIH)',
+    organizer: 'Ministry of Education & AICTE',
+    role: 'Lead Developer / Innovator',
+    date: '2026',
+    description: 'Developed RuralCare 360, a digital healthcare coordination ecosystem addressing grassroots patient triage, referral systems, and medicine logistics across rural healthcare centers.',
+    tags: ['Rural Healthcare', 'AI Triage', 'Public Health', 'National Level'],
+    certificateUrl: 'https://github.com/bharani1829/SIH-PROJECT.git',
+  },
+  {
+    id: 'adobe-hackathon',
+    title: 'Adobe University Hackathon',
+    organizer: 'Adobe (via Unstop)',
+    role: 'Participant — Aditya University',
+    date: '9th August 2026',
+    description: 'Participated in the prestigious Adobe University Hackathon tackling real-world software design, user interaction architectures, and scalable problem-solving.',
+    tags: ['Adobe', 'UI/UX Innovation', 'Unstop', 'Competitive Hackathon'],
+    certificateUrl: '/certificates/adobe_hackathon.pdf',
+  },
+  {
+    id: 'agentic-ai-hackathon',
+    title: 'Agentic AI Hackathon',
+    organizer: 'Product Space (via Unstop)',
+    role: 'Team Lead — Team orsuleelabharani18',
+    date: '2026',
+    description: 'Built autonomous AI agent workflows and decision-making systems using modern Agentic architectures, LLM orchestration, and prompt reasoning strategies.',
+    tags: ['Agentic AI', 'Autonomous Agents', 'Product Space', 'LLM Workflows'],
+    certificateUrl: '/certificates/agentic_ai_hackathon.pdf',
+  },
+  {
+    id: 'atom-quest-hackathon',
+    title: 'Atom Quest Hackathon',
+    organizer: 'Aditya University / Tech Community',
+    role: 'Participant & Developer',
+    date: '2026',
+    description: 'Challenged with rapid prototyping, building innovative software solutions under tight countdowns with peer teamwork, algorithmic design, and problem decomposition.',
+    tags: ['Fast Prototyping', 'Algorithms', 'Collaborative Coding'],
+  },
+  {
+    id: 'veda-symposium',
+    title: 'VEDA-2K26 Student Symposium — Technical Photography',
+    organizer: 'Aditya University',
+    role: 'Active Participant (25B11AI860)',
+    date: '11th & 12th September 2026',
+    description: 'Demonstrated enthusiasm and technical visual storytelling at VEDA Student Symposium in the specialized Technical Photography from E-Garbage T-PEG category.',
+    tags: ['VEDA Symposium', 'Technical Photography', 'E-Waste Innovation', 'Aditya Univ'],
+    certificateUrl: '/certificates/veda_technical_photography.pdf',
+  },
+];
 
 const certificationsData: Certification[] = [
   {
@@ -77,75 +140,170 @@ const certificationsData: Certification[] = [
 ];
 
 export const CertificationsSection: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'hackathons' | 'certifications'>('hackathons');
+
   return (
     <section id="certifications" className="relative py-20 px-5 sm:px-8 md:px-10 bg-transparent">
       <div className="max-w-6xl mx-auto">
-        <FadeIn delay={0} y={40} className="text-center mb-14 sm:mb-20">
-          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-bold">
-            CERTIFICATIONS
+        <FadeIn delay={0} y={40} className="text-center mb-10 sm:mb-14">
+          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-serif text-[#7F011F]">
+            ACHIEVEMENTS
           </h2>
-          <p className="text-[#A1A1A6] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
-            Verified Credentials &amp; Global Specializations
+          <p className="text-[#7F011F]/70 uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
+            Hackathons &amp; Global Certifications
           </p>
         </FadeIn>
 
-        {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {certificationsData.map((cert, idx) => (
-            <FadeIn key={cert.id} delay={idx * 0.06} y={30}>
-              <div className="rounded-[24px] sm:rounded-[26px] border border-white/10 bg-[#161618]/70 p-6 sm:p-7 flex flex-col justify-between h-full backdrop-blur-xl shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:border-white/20 hover:bg-[#1C1C1E]/80 transition-all duration-300 group relative overflow-hidden">
-                <div>
-                  {/* Top Badge & Issuer */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-white/[0.04] border border-white/8 text-[#A1A1A6]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400/90" strokeWidth={1.75} />
-                      {cert.issuer}
-                    </span>
-                    <div className="w-8 h-8 rounded-[10px] bg-white/[0.05] border border-white/10 flex items-center justify-center text-[#F5F5F7] shadow-sm">
-                      <Award className="w-4 h-4 text-[#F5F5F7]" strokeWidth={1.75} />
-                    </div>
-                  </div>
+        {/* Tab Switcher */}
+        <FadeIn delay={0.1} y={20} className="flex justify-center mb-12">
+          <div className="inline-flex p-1.5 rounded-full bg-[#FAF6EC] border border-[#7F011F]/15 shadow-sm">
+            <button
+              onClick={() => setActiveTab('hackathons')}
+              className={`flex items-center gap-2 px-5 sm:px-7 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all duration-200 ${
+                activeTab === 'hackathons'
+                  ? 'bg-[#7F011F] text-[#F5EBD0] shadow-sm'
+                  : 'text-[#7F011F]/70 hover:text-[#7F011F]'
+              }`}
+            >
+              <Flame className="w-4 h-4" />
+              <span>Hackathons ({hackathonsData.length})</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('certifications')}
+              className={`flex items-center gap-2 px-5 sm:px-7 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all duration-200 ${
+                activeTab === 'certifications'
+                  ? 'bg-[#7F011F] text-[#F5EBD0] shadow-sm'
+                  : 'text-[#7F011F]/70 hover:text-[#7F011F]'
+              }`}
+            >
+              <Trophy className="w-4 h-4" />
+              <span>Certifications ({certificationsData.length})</span>
+            </button>
+          </div>
+        </FadeIn>
 
-                  {/* Title */}
-                  <h3 className="text-base sm:text-lg font-semibold tracking-tight text-[#F5F5F7] mb-2 font-sans">
-                    {cert.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[#A1A1A6] text-xs sm:text-sm leading-relaxed mb-4 font-normal">
-                    {cert.description}
-                  </p>
-                </div>
-
-                {/* Skills Badges & Link */}
-                <div>
-                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10 mb-4">
-                    {cert.skillsLearned.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-[8px] bg-white/[0.04] border border-white/8 text-[#A1A1A6]"
-                      >
-                        {skill}
+        {/* ── Hackathons Grid ── */}
+        {activeTab === 'hackathons' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {hackathonsData.map((hack, idx) => (
+              <FadeIn key={hack.id} delay={idx * 0.06} y={30}>
+                <div className="rounded-[24px] sm:rounded-[26px] border border-[#7F011F]/15 bg-[#FAF6EC] p-6 sm:p-7 flex flex-col justify-between h-full shadow-[0_8px_24px_rgba(127,1,31,0.05)] hover:border-[#7F011F]/30 transition-all duration-300 group relative overflow-hidden">
+                  <div>
+                    {/* Top Badge & Organizer */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-[#F5EBD0] border border-[#7F011F]/15 text-[#7F011F]">
+                        <Flame className="w-3.5 h-3.5 text-[#7F011F]" strokeWidth={2} />
+                        {hack.organizer}
                       </span>
-                    ))}
+                      <span className="text-[11px] font-mono text-[#7F011F]/60 font-semibold">
+                        {hack.date}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-[#7F011F] mb-1 font-serif">
+                      {hack.title}
+                    </h3>
+                    <p className="text-xs font-mono text-[#7F011F]/70 font-semibold mb-3">
+                      {hack.role}
+                    </p>
+
+                    {/* Description */}
+                    <p className="text-[#7F011F]/80 text-xs sm:text-sm leading-relaxed mb-4 font-normal font-sans">
+                      {hack.description}
+                    </p>
                   </div>
 
-                  {cert.verifyUrl && (
-                    <a
-                      href={cert.verifyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-[#F5F5F7] hover:text-white hover:underline transition-colors duration-200"
-                    >
-                      <span>Verify Credential</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
-                    </a>
-                  )}
+                  {/* Tags & Action Link */}
+                  <div>
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-[#7F011F]/10 mb-4">
+                      {hack.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-[8px] bg-[#F5EBD0] border border-[#7F011F]/15 text-[#7F011F]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {hack.certificateUrl && (
+                      <a
+                        href={hack.certificateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#7F011F] hover:underline transition-colors duration-200"
+                      >
+                        <span>View Certificate ↗</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-[#7F011F]" strokeWidth={1.75} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+              </FadeIn>
+            ))}
+          </div>
+        )}
+
+        {/* ── Certifications Grid ── */}
+        {activeTab === 'certifications' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {certificationsData.map((cert, idx) => (
+              <FadeIn key={cert.id} delay={idx * 0.06} y={30}>
+                <div className="rounded-[24px] sm:rounded-[26px] border border-[#7F011F]/15 bg-[#FAF6EC] p-6 sm:p-7 flex flex-col justify-between h-full shadow-[0_8px_24px_rgba(127,1,31,0.05)] hover:border-[#7F011F]/30 transition-all duration-300 group relative overflow-hidden">
+                  <div>
+                    {/* Top Badge & Issuer */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-[#F5EBD0] border border-[#7F011F]/15 text-[#7F011F]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#7F011F]" strokeWidth={2} />
+                        {cert.issuer}
+                      </span>
+                      <div className="w-8 h-8 rounded-[10px] bg-[#7F011F]/10 border border-[#7F011F]/15 flex items-center justify-center text-[#7F011F] shadow-sm">
+                        <Award className="w-4 h-4 text-[#7F011F]" strokeWidth={1.75} />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-[#7F011F] mb-2 font-serif">
+                      {cert.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-[#7F011F]/80 text-xs sm:text-sm leading-relaxed mb-4 font-normal font-sans">
+                      {cert.description}
+                    </p>
+                  </div>
+
+                  {/* Skills Badges & Link */}
+                  <div>
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-[#7F011F]/10 mb-4">
+                      {cert.skillsLearned.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-[8px] bg-[#F5EBD0] border border-[#7F011F]/15 text-[#7F011F]"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    {cert.verifyUrl && (
+                      <a
+                        href={cert.verifyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#7F011F] hover:underline transition-colors duration-200"
+                      >
+                        <span>Verify Credential ↗</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-[#7F011F]" strokeWidth={1.75} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

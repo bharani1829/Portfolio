@@ -127,10 +127,10 @@ export const ProjectsSection: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={40} className="text-center mb-16 sm:mb-20">
-          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-bold">
+          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-serif text-[#7F011F]">
             PROJECTS
           </h2>
-          <p className="text-[#A1A1A6] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
+          <p className="text-[#7F011F]/70 uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
             Handcrafted Software &amp; AI Applications
           </p>
         </FadeIn>
@@ -179,19 +179,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
     >
       <motion.div
         style={{ scale }}
-        className="rounded-[28px] sm:rounded-[36px] border border-white/10 bg-[#161618]/90 backdrop-blur-2xl p-5 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.45)] overflow-hidden transition-all duration-300 hover:border-white/20"
+        className="rounded-[28px] sm:rounded-[36px] border border-[#7F011F]/15 bg-[#FAF6EC] p-5 sm:p-8 md:p-10 shadow-[0_12px_40px_rgba(127,1,31,0.06)] overflow-hidden transition-all duration-300 hover:border-[#7F011F]/30"
       >
         {/* ── Header Row ── */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-[#7F011F]/10">
           <div className="flex items-center gap-4 sm:gap-6">
-            <span className="font-light text-3xl sm:text-5xl text-[#A1A1A6]/50 font-sans">
+            <span className="font-light text-3xl sm:text-5xl text-[#7F011F]/40 font-serif">
               {project.number}
             </span>
             <div>
-              <span className="text-[11px] uppercase font-mono tracking-widest text-[#A1A1A6] block mb-1">
+              <span className="text-[11px] uppercase font-mono tracking-widest text-[#7F011F]/70 block mb-1">
                 {project.category}
               </span>
-              <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F5F7] font-sans">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#7F011F] font-serif">
                 {project.title}
               </h3>
             </div>
@@ -203,10 +203,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 shadow-sm text-xs font-mono text-[#F5F5F7] hover:bg-white/[0.12] hover:border-white/20 active:scale-[0.98] transition-all duration-200"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#7F011F] text-[#F5EBD0] shadow-sm text-xs font-mono hover:bg-[#630018] active:scale-[0.98] transition-all duration-200"
               >
-                <Github className="w-3.5 h-3.5 text-[#A1A1A6]" />
-                GitHub
+                <Github className="w-3.5 h-3.5 text-[#F5EBD0]" />
+                GitHub ↗
               </a>
             )}
             <LiveProjectButton label="Live Demo" href={project.liveUrl} />
@@ -215,14 +215,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
 
         {/* ── Description & Tags ── */}
         <div className="mb-6 sm:mb-8">
-          <p className="text-[#A1A1A6] font-normal text-sm sm:text-base leading-relaxed max-w-3xl mb-4">
+          <p className="text-[#7F011F]/80 font-normal text-sm sm:text-base leading-relaxed max-w-3xl mb-4 font-sans">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/8 text-xs font-mono text-[#A1A1A6] hover:text-white hover:border-white/15 transition-all duration-200 cursor-default"
+                className="px-3 py-1 rounded-full bg-[#F5EBD0] border border-[#7F011F]/15 text-xs font-mono text-[#7F011F] hover:bg-[#7F011F] hover:text-[#F5EBD0] transition-all duration-200 cursor-default"
               >
                 #{tag}
               </span>
@@ -235,7 +235,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
           /* Skill Cycle: 4 authentic workshop photos (1 large left + 3 right) */
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
             {/* First real photo — large left */}
-            <div className="md:col-span-6 h-[240px] sm:h-[320px] md:h-[400px] rounded-[28px] overflow-hidden border border-white/10 group/img relative shadow-lg">
+            <div className="md:col-span-6 h-[240px] sm:h-[320px] md:h-[400px] rounded-[28px] overflow-hidden border border-[#7F011F]/15 group/img relative shadow-sm">
               <img
                 src={project.images[0]}
                 alt={`${project.title} – Workshop Team`}
@@ -251,7 +251,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
             <div className="md:col-span-6 grid grid-cols-2 gap-3 h-full">
               {/* Photo 2 - spans full row */}
               <div
-                className="col-span-2 h-[150px] sm:h-[190px] rounded-[22px] overflow-hidden border border-white/10 group/img relative shadow-md cursor-pointer"
+                className="col-span-2 h-[150px] sm:h-[190px] rounded-[22px] overflow-hidden border border-[#7F011F]/15 group/img relative shadow-sm cursor-pointer"
                 onMouseEnter={() => setHoveredImg(1)}
                 onMouseLeave={() => setHoveredImg(null)}
               >
@@ -264,7 +264,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-mono text-white/90">
+                <div className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-[#7F011F]/80 backdrop-blur-sm text-[10px] font-mono text-[#F5EBD0]">
                   Event Session
                 </div>
               </div>
@@ -273,7 +273,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
               {project.images.slice(2).map((src, i) => (
                 <div
                   key={i + 2}
-                  className="h-[120px] sm:h-[150px] rounded-[20px] overflow-hidden border border-white/10 group/img relative shadow-md cursor-pointer"
+                  className="h-[120px] sm:h-[150px] rounded-[20px] overflow-hidden border border-[#7F011F]/15 group/img relative shadow-sm cursor-pointer"
                   onMouseEnter={() => setHoveredImg(i + 2)}
                   onMouseLeave={() => setHoveredImg(null)}
                 >
@@ -286,7 +286,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-mono text-white/90">
+                  <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-[#7F011F]/80 backdrop-blur-sm text-[10px] font-mono text-[#F5EBD0]">
                     Workshop {i + 3}
                   </div>
                 </div>
@@ -300,7 +300,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
               {project.images.slice(0, 2).map((src, i) => (
                 <div
                   key={i}
-                  className={`rounded-[26px] overflow-hidden border border-white/10 group/img shadow-md ${
+                  className={`rounded-[26px] overflow-hidden border border-[#7F011F]/15 group/img shadow-sm bg-[#F5EBD0] ${
                     i === 0 ? 'h-[140px] sm:h-[180px] md:h-[210px]' : 'h-[160px] sm:h-[220px] md:h-[250px]'
                   }`}
                 >
@@ -313,7 +313,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
                 </div>
               ))}
             </div>
-            <div className="md:col-span-7 h-[280px] sm:h-[410px] md:h-[475px] rounded-[28px] sm:rounded-[36px] overflow-hidden border border-white/10 group/img shadow-xl">
+            <div className="md:col-span-7 h-[280px] sm:h-[410px] md:h-[475px] rounded-[28px] sm:rounded-[36px] overflow-hidden border border-[#7F011F]/15 group/img shadow-md bg-[#F5EBD0]">
               <img
                 src={project.images[2]}
                 alt={`${project.title} Main Preview`}

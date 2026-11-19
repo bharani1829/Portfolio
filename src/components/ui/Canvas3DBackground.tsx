@@ -119,16 +119,15 @@ export const Canvas3DBackground: React.FC = () => {
   }, []);
 
   return (
-    /* Fixed Sticky Background Motion Canvas + Ambient Vignette */
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      <canvas ref={canvasRef} className="w-full h-full block" />
+    /* Fixed Background with Warm Light Sand Gradient and subtle radial vignette */
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#F5EBD0]">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background: `
-            radial-gradient(circle at bottom right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.5) 22%, transparent 38%),
-            linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.85) 100%),
-            linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 16%, transparent 75%, rgba(0,0,0,0.98) 100%)
+            radial-gradient(circle at 15% 20%, rgba(127, 1, 31, 0.04) 0%, transparent 45%),
+            radial-gradient(circle at 85% 80%, rgba(127, 1, 31, 0.05) 0%, transparent 50%),
+            linear-gradient(to bottom, rgba(245, 235, 208, 0.4) 0%, rgba(245, 235, 208, 0.8) 100%)
           `,
         }}
       />

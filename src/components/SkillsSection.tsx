@@ -34,7 +34,7 @@ const SkillItemRow: React.FC<SkillItemRowProps> = ({ name, level, status }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [displayLevel, setDisplayLevel] = useState(level);
 
-  // When hovered, percentage counts up / flows up from 0 to target level with smooth Apple easing
+  // When hovered, percentage counts up / flows up from 0 to target level with smooth easing
   useEffect(() => {
     let animFrame: number;
     if (isHovered) {
@@ -44,7 +44,6 @@ const SkillItemRow: React.FC<SkillItemRowProps> = ({ name, level, status }) => {
       const animateCount = (now: number) => {
         const elapsed = now - startTime;
         const progress = Math.min(1, elapsed / duration);
-        // Apple easeOutCubic curve
         const ease = 1 - Math.pow(1 - progress, 3);
         const current = Math.round(ease * level);
         setDisplayLevel(current);
@@ -68,30 +67,30 @@ const SkillItemRow: React.FC<SkillItemRowProps> = ({ name, level, status }) => {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="p-3 -mx-3 rounded-[16px] transition-all duration-300 hover:bg-white/[0.04] group/skill cursor-default select-none"
+      className="p-3 -mx-3 rounded-[16px] transition-all duration-300 hover:bg-[#7F011F]/5 group/skill cursor-default select-none"
     >
       <div className="flex justify-between items-center text-sm mb-2">
-        <span className="text-[#F5F5F7] font-medium flex items-center gap-2 group-hover/skill:text-white transition-colors">
+        <span className="text-[#7F011F] font-medium flex items-center gap-2 group-hover/skill:text-[#7F011F] transition-colors">
           {name}
-          <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/8 text-[#A1A1A6] group-hover/skill:border-white/20 group-hover/skill:text-white transition-all">
+          <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-[#7F011F]/5 border border-[#7F011F]/15 text-[#7F011F]/80 group-hover/skill:border-[#7F011F]/30 group-hover/skill:text-[#7F011F] transition-all">
             {status}
           </span>
         </span>
 
-        {/* Percentage Badge: Flows up on hover */}
+        {/* Percentage Badge */}
         <motion.div
           animate={isHovered ? { y: -3, scale: 1.08 } : { y: 0, scale: 1 }}
           transition={{ type: 'spring', stiffness: 450, damping: 25 }}
-          className="flex items-center gap-1 font-mono text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/[0.05] border border-white/10 group-hover/skill:border-white/30 group-hover/skill:bg-white/[0.12] transition-colors"
+          className="flex items-center gap-1 font-mono text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#7F011F]/5 border border-[#7F011F]/15 group-hover/skill:border-[#7F011F]/30 group-hover/skill:bg-[#7F011F]/10 transition-colors"
         >
-          <span className={isHovered ? 'text-white' : 'text-[#A1A1A6]'}>
+          <span className="text-[#7F011F]">
             {displayLevel}%
           </span>
           {isHovered && (
             <motion.span
               initial={{ opacity: 0, y: 3 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[10px] text-white/90 font-bold"
+              className="text-[10px] text-[#7F011F] font-bold"
             >
               ↑
             </motion.span>
@@ -99,8 +98,8 @@ const SkillItemRow: React.FC<SkillItemRowProps> = ({ name, level, status }) => {
         </motion.div>
       </div>
 
-      {/* Progress Bar — Apple Minimal Track with smooth re-flow on hover */}
-      <div className="w-full h-1.5 rounded-full bg-[#242424] overflow-hidden relative">
+      {/* Progress Bar — Wine Red on Light Sand Track */}
+      <div className="w-full h-1.5 rounded-full bg-[#E8D5A7] overflow-hidden relative">
         <motion.div
           key={isHovered ? 'hovered' : 'normal'}
           initial={isHovered ? { width: '0%' } : { width: `${level}%` }}
@@ -111,8 +110,8 @@ const SkillItemRow: React.FC<SkillItemRowProps> = ({ name, level, status }) => {
           }}
           className={`h-full rounded-full transition-colors duration-300 ${
             isHovered
-              ? 'bg-white shadow-[0_0_12px_rgba(255,255,255,0.45)]'
-              : 'bg-[#E5E5E5]'
+              ? 'bg-[#630018] shadow-[0_0_8px_rgba(127,1,31,0.4)]'
+              : 'bg-[#7F011F]'
           }`}
         />
       </div>
@@ -161,7 +160,7 @@ export const SkillsSection: React.FC = () => {
       skills: [
         { name: 'HTML5 & Semantic Markup', level: 92, status: 'Proficient' },
         { name: 'CSS3 & Modern Styling', level: 88, status: 'Proficient' },
-        { name: 'JavaScript & React UI', level: 78, status: 'Learning' },
+        { name: 'Responsive Web Design', level: 86, status: 'Proficient' },
       ],
     },
     {
@@ -186,23 +185,23 @@ export const SkillsSection: React.FC = () => {
     <section id="skills" className="relative py-20 px-5 sm:px-8 md:px-10 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={40} className="text-center mb-12 sm:mb-16">
-          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-bold">
+          <h2 className="hero-heading text-[clamp(2.5rem,8vw,90px)] leading-none tracking-tight font-serif text-[#7F011F]">
             SKILLS &amp; TECH
           </h2>
-          <p className="text-[#A1A1A6] uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
+          <p className="text-[#7F011F]/70 uppercase font-mono tracking-widest text-xs sm:text-sm mt-3">
             Core Competencies • Version Control &amp; AI Engineering
           </p>
         </FadeIn>
 
-        {/* Tab Filters — Apple Minimal Segmented Control */}
+        {/* Tab Filters */}
         <FadeIn delay={0.1} y={20} className="flex justify-center mb-12">
-          <div className="inline-flex flex-wrap justify-center gap-1.5 p-1 rounded-full bg-[#161618]/90 border border-white/10 backdrop-blur-xl shadow-sm">
+          <div className="inline-flex flex-wrap justify-center gap-1.5 p-1.5 rounded-full bg-[#FAF6EC] border border-[#7F011F]/15 shadow-sm">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-4 sm:px-5 py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-normal transition-all duration-200 ${
+              className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-normal transition-all duration-200 ${
                 activeTab === 'all'
-                  ? 'bg-[#F5F5F7] text-[#0A0A0A] shadow-sm'
-                  : 'text-[#A1A1A6] hover:text-[#F5F5F7]'
+                  ? 'bg-[#7F011F] text-[#F5EBD0] shadow-sm'
+                  : 'text-[#7F011F]/70 hover:text-[#7F011F]'
               }`}
             >
               All Skills
@@ -211,10 +210,10 @@ export const SkillsSection: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`px-4 sm:px-5 py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-normal transition-all duration-200 ${
+                className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-normal transition-all duration-200 ${
                   activeTab === cat.id
-                    ? 'bg-[#F5F5F7] text-[#0A0A0A] shadow-sm'
-                    : 'text-[#A1A1A6] hover:text-[#F5F5F7]'
+                    ? 'bg-[#7F011F] text-[#F5EBD0] shadow-sm'
+                    : 'text-[#7F011F]/70 hover:text-[#7F011F]'
                 }`}
               >
                 {cat.category}
@@ -223,18 +222,18 @@ export const SkillsSection: React.FC = () => {
           </div>
         </FadeIn>
 
-        {/* Skill Cards Grid — Apple VisionOS Squircle Bento */}
+        {/* Skill Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {filteredCategories.map((catGroup, idx) => {
             const IconComp = catGroup.icon;
             return (
               <FadeIn key={catGroup.id} delay={0.08 * idx} y={30}>
-                <div className="rounded-[24px] sm:rounded-[28px] border border-white/10 bg-[#161618]/75 p-6 sm:p-8 hover:border-white/20 hover:bg-[#1C1C1E]/80 transition-all duration-300 group shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
-                  <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-white/10">
-                    <div className="w-10 h-10 rounded-[12px] bg-white/[0.05] border border-white/10 flex items-center justify-center text-[#F5F5F7] shadow-sm">
-                      <IconComp className="w-4 h-4 text-[#F5F5F7]" strokeWidth={1.75} />
+                <div className="rounded-[24px] sm:rounded-[28px] border border-[#7F011F]/15 bg-[#FAF6EC] p-6 sm:p-8 hover:border-[#7F011F]/30 transition-all duration-300 group shadow-[0_10px_30px_rgba(127,1,31,0.05)]">
+                  <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-[#7F011F]/10">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#7F011F]/10 border border-[#7F011F]/20 flex items-center justify-center text-[#7F011F] shadow-sm">
+                      <IconComp className="w-4 h-4 text-[#7F011F]" strokeWidth={1.75} />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-[#F5F5F7] font-sans">
+                    <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-[#7F011F] font-serif">
                       {catGroup.category}
                     </h3>
                   </div>

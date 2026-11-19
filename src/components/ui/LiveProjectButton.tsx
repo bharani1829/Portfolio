@@ -20,10 +20,10 @@ export const LiveProjectButton: React.FC<LiveProjectButtonProps> = ({ label, hre
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 bg-white/[0.06] text-[#F5F5F7] text-xs uppercase font-medium tracking-wider hover:bg-white/[0.12] hover:border-white/20 active:scale-[0.98] transition-all duration-200 shadow-sm"
+      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#7F011F]/25 bg-transparent text-[#7F011F] text-xs font-semibold tracking-wider hover:bg-[#7F011F]/5 active:scale-[0.98] transition-all duration-200 shadow-sm"
     >
       <span>{label}</span>
-      <ExternalLink className="w-3.5 h-3.5 text-[#A1A1A6]" strokeWidth={1.75} />
+      <ExternalLink className="w-3.5 h-3.5 text-[#7F011F]" strokeWidth={1.75} />
     </a>
   );
 };
